@@ -1,0 +1,28 @@
+<view class="container">
+
+  <view class="list">
+    <view class="list-item " bindtap="testFunction">
+      <text class='page-title'>秒表</text>
+    </view>
+  </view>
+
+  <view class='timer'>
+    <view>
+      <text>{{minutes}}</text>
+      <text>：</text>
+      <text>{{seconds}}</text>
+      <text>：</text>
+      <text>{{millseconds}}</text>
+    </view>
+  </view>
+
+  <view>
+    <button class='btn-controller' bindtap="startTimer">开始</button>
+    <button class='btn-controller' bindtap="stopTimer">结束</button>
+  </view>
+
+  <view>
+    <text class="p label-times">显示时间</text>
+  </view>
+
+</view>

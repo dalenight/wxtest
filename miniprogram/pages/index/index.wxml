@@ -40,10 +40,10 @@
     </navigator>
   </view>
 
-  <!-- Hello world -->
+  <!-- 时钟/计时器 -->
   <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>Hello World!</text>
+    <navigator url="../ClockPage/ClockPage" open-type="navigate" class="uploader-text">
+      <text>时钟/计时器</text>
     </navigator>
   </view>
 

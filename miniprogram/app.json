@@ -1,6 +1,7 @@
 {
   "cloud": true,
   "pages": [
+    "pages/ClockPage/ClockPage",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",

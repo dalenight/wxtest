@@ -1,0 +1,22 @@
+/* pages/addFunction/addFunction.wxss */
+@import "../../style/guide.wxss";
+
+.page-title {
+  margin: 0 auto;
+}
+
+.timer {
+  margin: 40px 0;
+  font-size: 54px;
+}
+
+.btn-controller {
+  display: inline-block;
+  margin: 0 16px;
+  padding:1px 32px; 
+  }
+
+.label-times {
+  color: gray;
+  font-size: medium;
+}
