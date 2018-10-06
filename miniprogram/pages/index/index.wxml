@@ -40,4 +40,11 @@
     </navigator>
   </view>
 
+  <!-- Hello world -->
+  <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>Hello World!</text>
+    </navigator>
+  </view>
+
 </view>
