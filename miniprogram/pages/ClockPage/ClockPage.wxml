@@ -17,8 +17,12 @@
   </view>
 
   <view>
-    <button class='btn-controller' bindtap="startTimer">开始</button>
-    <button class='btn-controller' bindtap="stopTimer">结束</button>
+    <button class='btn-controller' bindtap="startOrPauseTimer">
+      {{isTiming?'暂停':'开始'}}
+    </button>
+    <button class='btn-controller' bindtap="resetTimerOrRecordTime">
+      {{isTiming?'记录':'归零'}}
+    </button>
   </view>
 
   <view>

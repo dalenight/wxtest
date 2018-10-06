@@ -5,6 +5,7 @@ const addPreceedingZero = (t) => {
 Page({
 
   data: {
+    isTiming: false,
     current: 0,
     minutes: '00',
     seconds: '00',
@@ -15,11 +16,38 @@ Page({
 
   },
 
+  startOrPauseTimer: function() {
+    const {
+      isTiming,
+    } = this.data;
+    if (isTiming) {
+      this.pauseTimer();
+    } else {
+      this.startTimer();
+    }
+  },
+
+  pauseTimer: function() {
+    const {
+      timer,
+    } = this.data;
+    clearInterval(timer);
+    this.setData({
+      isTiming: false,
+    });
+  },
+
+
   startTimer: function() {
     const start = +new Date();
-   
+    const previous = this.data.current;
+    const timer = this.data.timer;
+    if (timer) {
+      clearInterval(timer);
+    }
+
     const t = setInterval(() => {
-      const current = +new Date() - this.data.start;
+      const current = +new Date() - this.data.start + previous;
       this.setData({
         current: current,
         minutes: addPreceedingZero(current / 1000 / 60),
@@ -31,19 +59,45 @@ Page({
     this.setData({
       start: start,
       timer: t,
+      isTiming: true,
     });
   },
 
-  stopTimer: function() {
+  resetTimerOrRecordTime: function() {
+    const {
+      isTiming,
+    } = this.data;
+    if (isTiming) {
+      this.recordTime();
+    } else {
+      this.resetTimer();
+    }
+    ``
+  },
+
+  resetTimer: function() {
     const {
       start,
       timer,
     } = this.data;
     const end = +new Date();
-    clearInterval(timer);
+    if (timer) {
+      clearInterval(timer);
+    }
     this.setData({
+      isTiming: false,
+      current: 0,
+      minutes: '00',
+      seconds: '00',
+      millseconds: '00',
       end: end,
-    })
+    });
+  },
+
+  recordTime: function() {
+    console.log('hello world')
+
+
   },
 
 
