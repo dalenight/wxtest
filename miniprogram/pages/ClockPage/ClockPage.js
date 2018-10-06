@@ -10,6 +10,7 @@ Page({
     minutes: '00',
     seconds: '00',
     millseconds: '00',
+    times: [],
   },
 
   onLoad: function(options) {
@@ -54,7 +55,7 @@ Page({
         seconds: addPreceedingZero(current / 1000 % 60),
         millseconds: addPreceedingZero(current % 1000 / 10),
       });
-    }, 10);
+    }, 130);
 
     this.setData({
       start: start,
@@ -91,14 +92,23 @@ Page({
       seconds: '00',
       millseconds: '00',
       end: end,
+      times: [],
     });
   },
 
   recordTime: function() {
-    console.log('hello world')
+    const {
+      times,
+      current
+    } = this.data;
+    times.push({
+      current: current,
+      text: addPreceedingZero(current / 1000 / 60) + ':' + addPreceedingZero(current / 1000 % 60) + ':' + addPreceedingZero(current % 1000 / 10),
+    });
+    this.setData({
+      times: times
+    });
 
 
   },
-
-
 })

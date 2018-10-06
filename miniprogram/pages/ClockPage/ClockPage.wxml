@@ -25,8 +25,17 @@
     </button>
   </view>
 
-  <view>
+  <view class='times-container' wx:if="{{times.length>0}}">
     <text class="p label-times">显示时间</text>
+    <scroll-view scroll-y="true" class='scroll-times' scroll-top='{{times.length*100}}'>
+      <view class="list-times">
+        <view class="list-item-time " bindtap="testFunction" wx:for="{{times}}" wx:for-index="index" wx:for-item="time">
+          <text class='time-index'>{{index+1}}</text>
+          <text class='time-interval'>{{time.text}}</text>
+        </view>
+      </view>
+    </scroll-view>
   </view>
+
 
 </view>

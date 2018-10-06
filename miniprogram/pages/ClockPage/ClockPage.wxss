@@ -13,10 +13,33 @@
 .btn-controller {
   display: inline-block;
   margin: 0 16px;
-  padding:1px 32px; 
-  }
+  padding: 1px 32px;
+}
+
+.times-container {
+  display: block;
+  width: 100%;
+}
+
+.scroll-times {
+  max-height: 200px;
+}
 
 .label-times {
   color: gray;
   font-size: medium;
+  margin: 8px;
+}
+
+.list-times {
+  display: block;
+  margin: 8px;
+}
+
+.list-item-time {
+  width: 100%;
+}
+
+.time-index {
+  margin: 0 8px;
 }
